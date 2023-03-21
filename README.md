@@ -17,5 +17,6 @@
   <li> <a href="https://miro.com/app/board/uXjVPgl3wTo=">Miro</a> </li>
   <li> <a href="https://zagreba.youtrack.cloud/agiles/141-3/current">Тасктрекер</a> </li>
   <li> <a href="https://docs.google.com/document/d/1yOEgS4BiW5rUPwgt6yw1k3NZLn7aF7Mj/edit">Техническое задание</a> </li>
+  <li> <a href="https://drive.google.com/file/d/1sae726X5wpxPzYelQo_8wrUPRUub5faS/view">Курсовой проект</a> </li>
 </ul>
 
