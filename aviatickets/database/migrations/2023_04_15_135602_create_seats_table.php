@@ -14,13 +14,17 @@ return new class extends Migration
         Schema::create('seats', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->foreignId('airplane_model_id');
+            $table->foreignId('airplane_model_id')
+                ->references('id')
+                ->on('airplane_models')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
 
             $table->foreignId('seat_class_id')
                 ->references('id')
-                ->on('air_carriers')
+                ->on('seat_classes')
                 ->cascadeOnDelete()
-                ->cascadeOnUpdate();;
+                ->cascadeOnUpdate();
 
             $table->timestamps(0);
             // TODO posx, posy, price;
