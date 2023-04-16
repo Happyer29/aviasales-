@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('seat_classes', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('airplane_models', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps(0);
-
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('seat_classes');
+        Schema::dropIfExists('airplane_models');
     }
 };

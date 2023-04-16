@@ -12,20 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('seats', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
 
-            $table->foreignId('airplane_model_id')
-                ->nullable()
-                ->references('id')
-                ->on('airplane_models')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
+            $table->foreignId('airplane_model_id');
 
             $table->foreignId('seat_class_id')
                 ->references('id')
-                ->on('seat_classes')
+                ->on('air_carriers')
                 ->cascadeOnDelete()
-                ->cascadeOnUpdate();
+                ->cascadeOnUpdate();;
 
             $table->timestamps(0);
             // TODO posx, posy, price;

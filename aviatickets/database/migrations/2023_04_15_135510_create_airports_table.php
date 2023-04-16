@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('airports', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name', 32);
             $table->timestamps(0);
             // TODO add geo table and FK

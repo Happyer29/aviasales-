@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('air_carriers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name', 32);
             $table->string('api_key', 64);
             $table->string('logo');

@@ -12,13 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('flights', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('air_carrier_id')
-                ->references('id')
-                ->on('air_carriers')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
-
+            $table->bigIncrements('id');
             $table->foreignId('air_carrier_id')
                 ->references('id')
                 ->on('air_carriers')
@@ -39,12 +33,12 @@ return new class extends Migration
 
             $table->foreignId('airplane_id')
                 ->references('id')
-                ->on('airplane')
+                ->on('airplanes')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
 
-            $table->timestampTz('from_timestamp', 0);
-            $table->timestampTz('to_timestamp', 0);
+            $table->timestampTz('from_timestamp', 0)->nullable();
+            $table->timestampTz('to_timestamp', 0)->nullable();
             $table->timestamps(0);
         });
     }

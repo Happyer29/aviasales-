@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('airplanes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name', 32);
-            $table->unsignedBigInteger('airplane_model_id')
+            $table->unsignedBigInteger('airplane_model_id')->unsigned()->index();
+            $table->foreign('airplane_model_id')
                 ->references('id')
                 ->on('airplane_models')
                 ->cascadeOnDelete()
