@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('api_key', 64);
             $table->string('logo');
             $table->timestamps(0);
-        });
+        }); // TODO all down migrations
     }
 
     /**
