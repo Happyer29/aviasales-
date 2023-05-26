@@ -1,8 +1,8 @@
 <template>
-    <header class="bg-dark mb-4">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-center py-3 mb-4">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+    <header class="bg-gray-900 mb-4">
+        <div class="container mx-auto sm:px-4">
+            <div class="flex flex-wrap justify-center py-3 mb-4">
+                <a href="/" class="flex items-center mb-3 md:mb-0 md:me-auto text-gray-900 text-decoration-none">
                     <svg class="bi me-2" width="32" height="32" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect y="0.196442" width="34.3148" height="34" fill="url(#pattern0)"/>
                         <defs>
@@ -14,48 +14,48 @@
                     </svg>
                     <span class="fs-4 text-white fw-bold">Aviatickets</span>
                 </a>
-                <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">О нас</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Ваши заказы</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Контакты</a></li>
+                <ul class="flex flex-wrap list-none pl-0 mb-0 ">
+                    <li class=""><a href="#" class="inline-block py-2 px-4 no-underline text-white fw-bold">О нас</a></li>
+                    <li class=""><a href="#" class="inline-block py-2 px-4 no-underline text-white fw-bold">Ваши заказы</a></li>
+                    <li class=""><a href="#" class="inline-block py-2 px-4 no-underline text-white fw-bold">Контакты</a></li>
                 </ul>
             </div>
         </div>
     </header>
-    <div class="container min-vh-100">
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal">Покупка дешевых авиабилетов</h1>
+    <div class="container mx-auto sm:px-4 min-vh-100">
+        <div class="pricing-header p-6 md:pb-6 mx-auto text-center">
+            <h1 class="text-4xl fw-normal">Покупка дешевых авиабилетов</h1>
         </div>
         <form action="" class="needs-validation">
-            <div class="row g-4">
-                <div class="col-sm-4 ps-0">
+            <div class="flex flex-wrap  g-4">
+                <div class="sm:w-1/3 pr-4 pl-4 ps-0">
                     <label for="from" class="form-label">Откуда</label>
-                    <input type="text" class="form-control" id="from" placeholder="" value="" required="">
+                    <input type="text" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" id="from" placeholder="" value="" required="">
                 </div>
-                <div class="col-sm-4">
+                <div class="sm:w-1/3 pr-4 pl-4">
                     <label for="to" class="form-label">Куда</label>
-                    <input type="text" class="form-control" id="to" placeholder="" value="" required="">
+                    <input type="text" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" id="to" placeholder="" value="" required="">
                 </div>
-                <div class="col-sm-2">
+                <div class="sm:w-1/5 pr-4 pl-4">
                     <label for="startDate" class="form-label">Дата</label>
-                    <input type="date" class="form-control" id="startDate" placeholder="" value="" required="">
+                    <input type="date" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" id="startDate" placeholder="" value="" required="">
                 </div>
-                <div class="col-sm-2 pe-0">
+                <div class="sm:w-1/5 pr-4 pl-4 pe-0">
                     <label for="count" class="form-label">Пассажиры</label>
-                    <input type="number" id="count" class="form-control" />
+                    <input type="number" id="count" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" />
                 </div>
                 <div class="px-5">
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Найти билеты</button>
+                    <button class="w-full inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded  no-underline bg-blue-600 text-white hover:bg-blue-600 py-3 px-4 leading-tight text-xl" type="submit">Найти билеты</button>
                 </div>
             </div>
         </form>
     </div>
-    <footer class="pt-2 mt-md-2 pt-md-2 border-top bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-3 col-md">
+    <footer class="pt-2 md:mt-2 md:pt-2 border-t bg-gray-900">
+        <div class="container mx-auto sm:px-4">
+            <div class="flex flex-wrap ">
+                <div class="w-1/4 relative md:flex-grow md:flex-1">
                     <ul class="list-unstyled text-small">
-                        <li class="nav-item">
+                        <li class="">
                             <svg class="bi" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <rect y="0.196442" width="34.3148" height="34" fill="url(#pattern0)"/>
                                 <defs>
@@ -69,19 +69,19 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-3 col-md">
+                <div class="w-1/4 relative md:flex-grow md:flex-1">
                     <ul class="list-unstyled text-small">
-                        <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Контакты</a></li>
+                        <li class=""><a href="#" class="inline-block py-2 px-4 no-underline text-white fw-bold">Контакты</a></li>
                     </ul>
                 </div>
-                <div class="col-3 col-md">
+                <div class="w-1/4 relative md:flex-grow md:flex-1">
                     <ul class="list-unstyled text-small">
-                        <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">О нас</a></li>
+                        <li class=""><a href="#" class="inline-block py-2 px-4 no-underline text-white fw-bold">О нас</a></li>
                     </ul>
                 </div>
-                <div class="col-3 col-md">
+                <div class="w-1/4 relative md:flex-grow md:flex-1">
                     <ul class="list-unstyled text-small">
-                        <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Для клиентов</a></li>
+                        <li class=""><a href="#" class="inline-block py-2 px-4 no-underline text-white fw-bold">Для клиентов</a></li>
                     </ul>
                 </div>
             </div>
