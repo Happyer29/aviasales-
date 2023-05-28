@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('airports', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 32);
-            $table->unsignedBigInteger('cities_id')->unsigned()->index();
-            $table->foreign('cities_id')
-                ->references('id')
-                ->on('cities')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
             $table->timestamps(0);
             // TODO add geo table and FK
             //$table->id('geo_id');
@@ -31,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('airports');
+        Schema::dropIfExists('cities');
     }
 };
