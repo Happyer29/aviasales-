@@ -12,8 +12,9 @@ class CitiesController extends Controller
         return Cities::all();
     }
 
-    public function show(){
-        return Cities::find(1);
+    public function show(Cities $city): Cities
+    {
+        return $city;
     }
 
 

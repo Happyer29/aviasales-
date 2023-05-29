@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 use App\Http\Controllers\AirplaneModelController;
 Route::get('airplaneModels', [AirplaneModelController::class, 'index']);
 
-
+use App\Http\Controllers\CitiesController;
 //Route::get('airplaneModels', 'AirplaneModelController@index');
-
-Route::get('/cities', [\App\Http\Controllers\CitiesController::class, 'show']);
+Route::get('/cities', [CitiesController::class, 'index']);
+Route::get('/cities/{city}', [CitiesController::class, 'show']);
