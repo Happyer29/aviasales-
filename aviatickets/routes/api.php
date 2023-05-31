@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Airport;
+use App\Models\Cities;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +33,15 @@ use App\Http\Controllers\CitiesController;
 //Route::get('airplaneModels', 'AirplaneModelController@index');
 Route::get('/cities', [CitiesController::class, 'index']);
 Route::get('/cities/{city}', [CitiesController::class, 'show']);
+
+use \App\Http\Controllers\AirportController;
+//Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
+Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
+//Route::get('/airport/{airport}/city', function(Airport $airport) {
+//    return response()->json($airport->city);
+//});
+
+Route::get('/cities/{cities}/airports', [CitiesController::class, 'airports']);
+Route::get('/test', function (){
+    return response()->json(\App\Models\Cities::find(1)->airports);
+});

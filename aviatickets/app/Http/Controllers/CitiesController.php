@@ -18,4 +18,7 @@ class CitiesController extends Controller
     }
 
 
+    public function airports(Cities $cities){
+        return response()->json($cities->airports, 200);
+    }
 }

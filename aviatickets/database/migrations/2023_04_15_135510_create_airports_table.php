@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('airports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 32);
-            $table->unsignedBigInteger('cities_id')->unsigned()->index();
-            $table->foreign('cities_id')
-                ->references('id')
-                ->on('cities')
+            //$table->unsignedBigInteger('cities_id')->unsigned()->index();
+            $table->foreignIdFor(\App\Models\Cities::class)
+                ->constrained()
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
             $table->timestamps(0);
