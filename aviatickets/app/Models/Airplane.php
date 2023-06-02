@@ -10,6 +10,26 @@ class Airplane extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function airplaneModel(): BelongsTo
     {
         return $this->belongsTo(AirplaneModel::class, 'id');
