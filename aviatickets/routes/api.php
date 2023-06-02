@@ -4,9 +4,6 @@ use App\Http\Controllers\AirplaneController;
 use App\Http\Controllers\AirplaneModelController;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\CitiesController;
-use App\Models\Airport;
-use App\Models\Cities;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
