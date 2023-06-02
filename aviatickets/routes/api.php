@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AirplaneController;
 use App\Models\Airport;
 use App\Models\Cities;
 use Illuminate\Http\Request;
@@ -41,6 +42,8 @@ Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
 Route::get('/cities/{cities}/airports', [CitiesController::class, 'airports']);
 
 
+Route::get('/airplaneModel/{airplaneModel}/airplanes', [AirplaneModelController::class, 'airplanes']);
+Route::get('/airplane/{airplane}/airplaneModel', [AirplaneController::class, 'airplaneModel']);
 
 
 Route::get('/test', function (){
