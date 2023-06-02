@@ -39,6 +39,10 @@ use \App\Http\Controllers\AirportController;
 Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
 
 Route::get('/cities/{cities}/airports', [CitiesController::class, 'airports']);
+
+
+
+
 Route::get('/test', function (){
     return response()->json(\App\Models\Cities::find(1)->airports);
 });
