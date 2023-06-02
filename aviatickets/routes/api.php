@@ -5,6 +5,7 @@ use App\Http\Controllers\AirplaneController;
 use App\Http\Controllers\AirplaneModelController;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\FlightController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,17 @@ Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
 
 Route::get('/airCarrier/', [AirCarrierController::class, 'index']);
 Route::get('/airCarrier/{airCarrier}', [AirCarrierController::class, 'show']);
+
+
+Route::get('/flight/', [FlightController::class, 'index']);
+Route::get('/flight/{flight}', [FlightController::class, 'show']);
+Route::get('/flight/{flight}/airplane', [FlightController::class, 'airplane']);
+Route::get('/flight/{flight}/airCarrier', [FlightController::class, 'airCarrier']);
+Route::get('/flight/{flight}/fromAirport', [FlightController::class, 'fromAirport']);
+Route::get('/flight/{flight}/toAirport', [FlightController::class, 'toAirport']);
+
+
+
 
 
 //tests
