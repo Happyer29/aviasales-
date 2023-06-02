@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AirCarrierController;
 use App\Http\Controllers\AirplaneController;
 use App\Http\Controllers\AirplaneModelController;
 use App\Http\Controllers\AirportController;
@@ -36,6 +37,9 @@ Route::get('/cities/{cities}/airports', [CitiesController::class, 'airports']);
 Route::get('/airport/', [AirportController::class, 'index']);
 Route::get('/airport/{airport}', [AirportController::class, 'show']);
 Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
+
+Route::get('/airCarrier/', [AirCarrierController::class, 'index']);
+Route::get('/airCarrier/{airCarrier}', [AirCarrierController::class, 'show']);
 
 
 //tests
