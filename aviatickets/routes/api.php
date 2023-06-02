@@ -1,8 +1,9 @@
 <?php
 
-use App\Models\Airport;
-use App\Models\Cities;
-use Illuminate\Http\Request;
+use App\Http\Controllers\AirplaneController;
+use App\Http\Controllers\AirplaneModelController;
+use App\Http\Controllers\AirportController;
+use App\Http\Controllers\CitiesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,32 +17,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-//use App\Http\Controllers\AirplaneModelController;
-//Route::get('/airplaneModels', function() {
-//    // If the Content-Type and Accept headers are set to 'application/json',
-//    // this will return a JSON structure. This will be cleaned up later.
-//    return \App\Models\AirplaneModel::all();
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
 //});
 
-use App\Http\Controllers\AirplaneModelController;
 Route::get('airplaneModels', [AirplaneModelController::class, 'index']);
+Route::get('/airplaneModel/{airplaneModel}', [AirplaneModelController::class, 'show']);
+Route::get('/airplaneModel/{airplaneModel}/airplanes', [AirplaneModelController::class, 'airplanes']);
 
-use App\Http\Controllers\CitiesController;
-//Route::get('airplaneModels', 'AirplaneModelController@index');
+Route::get('/airplane/', [AirplaneController::class, 'index']);
+Route::get('/airplane/{airplane}', [AirplaneController::class, 'show']);
+Route::get('/airplane/{airplane}/airplaneModel', [AirplaneController::class, 'airplaneModel']);
+
 Route::get('/cities', [CitiesController::class, 'index']);
 Route::get('/cities/{city}', [CitiesController::class, 'show']);
-
-use \App\Http\Controllers\AirportController;
-//Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
-Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
-//Route::get('/airport/{airport}/city', function(Airport $airport) {
-//    return response()->json($airport->city);
-//});
-
 Route::get('/cities/{cities}/airports', [CitiesController::class, 'airports']);
+
+Route::get('/airport/', [AirportController::class, 'index']);
+Route::get('/airport/{airport}', [AirportController::class, 'show']);
+Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
+
+
+//tests
 Route::get('/test', function (){
     return response()->json(\App\Models\Cities::find(1)->airports);
 });
