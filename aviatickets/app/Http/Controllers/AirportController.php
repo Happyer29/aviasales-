@@ -12,6 +12,10 @@ class AirportController extends Controller
         Airport::all();
     }
 
+    public function show(Airport $airport){
+        return $airport;
+    }
+
     public function city(Airport $airport){
         return response()->json($airport->city, 200);
     }
