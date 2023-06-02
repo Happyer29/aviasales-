@@ -12,9 +12,13 @@ class CitiesController extends Controller
         return Cities::all();
     }
 
-    public function show(){
-        return Cities::find(1);
+    public function show(Cities $city): Cities
+    {
+        return $city;
     }
 
 
+    public function airports(Cities $cities){
+        return response()->json($cities->airports, 200);
+    }
 }
