@@ -35,11 +35,8 @@ Route::get('/cities', [CitiesController::class, 'index']);
 Route::get('/cities/{city}', [CitiesController::class, 'show']);
 
 use \App\Http\Controllers\AirportController;
-//Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
+
 Route::get('/airport/{airport}/city', [AirportController::class, 'city']);
-//Route::get('/airport/{airport}/city', function(Airport $airport) {
-//    return response()->json($airport->city);
-//});
 
 Route::get('/cities/{cities}/airports', [CitiesController::class, 'airports']);
 Route::get('/test', function (){

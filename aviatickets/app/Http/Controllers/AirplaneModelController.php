@@ -12,4 +12,12 @@ class AirplaneModelController extends Controller
     {
         return AirplaneModel::all();
     }
+
+    public function show(AirplaneModel $airplaneModel){
+        return $airplaneModel;
+    }
+
+    public function airplanes(AirplaneModel $airplaneModel){
+        return response()->json($airplaneModel->airplanes, 200);
+    }
 }
